@@ -50,10 +50,6 @@ Example NextJS project showcasing the integration of dLocal SmartFields. Get sta
 
 Integrate dLocal SmartFields into your React application using the provided starter project. Follow the step-by-step guide for an easy setup.
 
-## Contributing
-
-Feel free to contribute to this repository by opening issues, providing feedback, or submitting pull requests. We welcome your contributions!
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

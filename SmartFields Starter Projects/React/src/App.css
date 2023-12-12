@@ -1,0 +1,19 @@
+:root {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  height: 100%;
+  font-family: "intro", sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  text-align: center;
+}

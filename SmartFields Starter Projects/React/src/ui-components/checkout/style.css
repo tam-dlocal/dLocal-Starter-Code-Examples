@@ -1,0 +1,311 @@
+.checkout {
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkout .content {
+    max-width: 350px;
+    width: 80%;
+}
+.checkout .content * {
+    font-family: Roboto;
+    font-weight: light;
+    color: #000;
+    font-size: 0.875rem;
+    -webkit-font-smoothing: antialiased;
+}
+.checkout .content #generalErrorContainer {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+}
+.checkout .content #success-container {
+    z-index: 4;
+    position: absolute;
+    top: 100px;
+    left: 23px;
+    background-color: white;
+    border: 0.0625em solid #a2a2a2;
+    padding: 30px;
+}
+.checkout .content #success-container svg {
+    height: 50px;
+    margin-right: 10px;
+}
+.checkout .content #success-container #close-btn {
+    position: absolute;
+    right: 10;
+    top: 10;
+    cursor: pointer;
+    color: #a2a2a2;
+}
+.checkout .content .overlay {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    overflow: auto;
+    position: absolute;
+    background-color: white;
+    opacity: 0.6;
+    z-index: 2;
+}
+.checkout .content.loading {
+    background-color: white;
+    z-index: -1;
+}
+.checkout .content.loading .loader {
+    display: block;
+}
+.checkout .content.loading .overlay {
+    display: block;
+}
+.checkout .content #loading-container {
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    z-index: 4;
+}
+.checkout .content form {
+    line-height: 21px;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: 'lnum';
+    color: #000;
+    align-items: center;
+}
+.checkout .content .title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5625em;
+    font-family: Roboto;
+    font-weight: bold;
+    margin-top: 15px;
+}
+.checkout .content fieldset {
+    border: none;
+}
+.checkout .content .fieldset {
+    border: none;
+    padding: 15px;
+    background-color: white;
+    border-radius: 10px;
+    width: inherit;
+    height: inherit;
+    position: relative;
+    text-align: center;
+}
+.checkout .content .fieldset .payment-methods {
+    width: 100%;
+    display: inline-block;
+    padding: 10px 0px 15px;
+}
+.checkout .content .fieldset .payment-methods .credit-card {
+    position: relative;
+    border-radius: 5px;
+    border: 0.0625em solid #666;
+    width: calc(50% - 30px);
+    float: right;
+    border-radius: 10px;
+    height: 40px;
+    margin: unset;
+    background-color: transparent;
+}
+.checkout .content .fieldset .payment-methods .credit-card img {
+    height: 50%;
+    padding: 10px 0px;
+    float: left;
+}
+.checkout .content .fieldset .payment-methods .credit-card label {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+}
+.checkout .content fieldset {
+    text-align: left;
+}
+.checkout .content .fieldset legend + * {
+    clear: both;
+}
+.checkout .content .card-only {
+    display: block;
+}
+.checkout .content .payment-request-available {
+    display: none;
+}
+.checkout .content .row {
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 0 10px;
+}
+.checkout .content .field {
+    position: relative;
+    width: 100%;
+    border-bottom: 0.0625em solid #a2a2a2;
+    border-radius: unset;
+    padding: 3px;
+}
+.checkout .content .half {
+    width: calc(50% - 3px);
+    vertical-align: top;
+    margin-right: 3.5px;
+}
+.checkout .content .half + .half {
+    margin-left: 3.5px;
+    margin-right: 0px;
+}
+.checkout .content .field + .container, .checkout .content .container + .field, .checkout .content .container .field, .checkout .content .field + .field {
+    margin-top: 10px;
+}
+.checkout .content .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+}
+.checkout .content .select-wrapper span {
+    width: 10px;
+    height: 10px;
+    bottom: 25px;
+    font-size: 10px;
+    right: 10px;
+    line-height: 33px;
+    position: absolute;
+    text-align: center;
+    z-index: 2;
+    color: #666;
+}
+.checkout .content .installments:disabled {
+    color: #666;
+}
+.checkout .content .select-wrapper select:focus {
+    outline: none;
+}
+.checkout .content .input, .checkout .content select {
+    width: 100%;
+    color: #666;
+    background: transparent;
+    padding: 5px 0 6px 0;
+    border-bottom: 1px solid #fff;
+    transition: border-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.checkout .content .input:-ms-input-placeholder, .checkout .content .input::-moz-placeholder, .checkout .content .input::-webkit-input-placeholder {
+    color: #c1c1c1;
+}
+.checkout .content .field.autofilled {
+    background-color: #faffbd !important;
+}
+.checkout .content input, .checkout .content button, .checkout .content select {
+    -webkit-animation: 1ms void-animation-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border-style: none;
+    border-radius: 0;
+}
+.checkout .content input:-webkit-autofill, .checkout .content input:-webkit-autofill:hover, .checkout .content input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #fefde5 inset;
+    box-shadow: 0 0 0px 1000px #fefde5 inset;
+}
+.checkout .content .checkout-btn {
+    display: block;
+    width: 240px;
+    height: 40px;
+    margin: 20px 0 10px;
+    font-family: Roboto;
+    font-size: medium;
+    color: #fff;
+    background: #4285f4;
+    border-radius: 1px;
+    cursor: pointer;
+}
+.checkout .content .actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.checkout .content .error svg .base {
+    fill: #fff;
+}
+.checkout .content .error svg .glyph {
+    fill: #ff2e50;
+}
+.checkout .content .error .message {
+    color: #666;
+}
+.checkout .content .tooltipContainer {
+    position: absolute;
+    height: 30px;
+    top: 3px;
+    right: 6px;
+}
+.checkout .content .tooltipImage {
+    height: 13px;
+}
+.checkout .content .tooltipInner {
+    visibility: hidden;
+    position: absolute;
+    top: -80px;
+    left: -85px;
+    height: 20px;
+    z-index: 5;
+}
+.checkout .content .tooltipImage:hover + .tooltipInner {
+    visibility: visible;
+    transition: visibility 0.2s linear 0.25s;
+}
+.checkout .content .tooltipInnerImage {
+    height: 70px;
+}
+.checkout .content .visible {
+    visibility: visible;
+}
+.checkout .content .hidden {
+    visibility: hidden;
+}
+.checkout .content .errorMsgContainer {
+    margin-top: 5px;
+}
+.checkout .content .errorMsgContainer span {
+    display: none;
+    color: #ff2e50;
+}
+.checkout .content .hasError .error-tooltip {
+    display: block !important;
+}
+.checkout .content .hasError .field {
+    border-bottom: 0.0625em solid #ff2e50;
+}
+.checkout .content .field.hasError {
+    transition: margin-bottom 0.2s ease-out 0.25s;
+    margin-bottom: 36px;
+}
+.checkout .content .Field--required .error-tooltip {
+    display: block !important;
+}
+.checkout .content .Field--required .DlocalField--invalid .error-tooltip {
+    display: block !important;
+}
+.checkout .content .success .icon .border {
+    stroke: #ff2e50;
+}
+.checkout .content .success .icon .checkmark {
+    stroke: #666;
+}
+.checkout .content .success .title {
+    color: #666;
+}
+.checkout .content .success .message {
+    color: #666;
+}
+.checkout .content .success .reset path {
+    fill: #666;
+}
+.checkout .content #containerPan {
+    padding: 5px 0 6px 0;
+}
+.checkout .content #containerExpiration {
+    padding: 5px 0 6px 0;
+}
+.checkout .content #containerCVV {
+    padding: 5px 0 6px 0;
+}

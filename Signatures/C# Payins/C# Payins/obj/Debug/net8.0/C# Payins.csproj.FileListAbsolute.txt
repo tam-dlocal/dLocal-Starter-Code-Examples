@@ -1,0 +1,25 @@
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\appsettings.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\C# Payins.exe
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\C# Payins.deps.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\C# Payins.runtimeconfig.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\C# Payins.dll
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\bin\Debug\net8.0\C# Payins.pdb
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.AssemblyInfoInputs.cache
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.AssemblyInfo.cs
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.csproj.CoreCompileInputs.cache
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets\msbuild.C# Payins.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets\msbuild.build.C# Payins.props
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.C# Payins.props
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.C# Payins.props
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\scopedcss\bundle\C# Payins.styles.css
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.dll
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\refint\C# Payins.dll
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.pdb
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\C# Payins.genruntimeconfig.cache
+C:\Users\luish\OneDrive\Documentos\C# Payins\C# Payins\obj\Debug\net8.0\ref\C# Payins.dll

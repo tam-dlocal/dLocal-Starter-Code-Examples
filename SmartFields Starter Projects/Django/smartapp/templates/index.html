@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartFields Checkout</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap">
+    <style>
+        body {
+            font-family: 'Quicksand' !important;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+        }
+
+        header,
+        footer {
+            background-color: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 1em;
+        }
+
+        #content {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 85px !important;
+        }
+
+        h2 {
+            color: #2196F3;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1565C0;
+        }
+
+        #cardHolder {
+            border: 0;
+            line-height: 18px;
+            color: #666
+        }
+
+        #cardHolder::placeholder {
+            border: 0;
+            line-height: 18px;
+            color: #c1c1c1
+        }
+
+        .field-container :first-child {
+            display: inline-block;
+            width: 253px;
+            vertical-align: top;
+            margin-right: 3.5px;
+            height: 30px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SmartFields Checkout</h1>
+    </header>
+
+    <div id="content">
+        <div id="loader-example-2" class="loader"></div>
+        <h2 style="text-align: center; margin: 25px;">Payment Method</h2>
+        <form id="checkoutForm" method="post" action="#">
+            <div class="field-container">
+                <div id="panField"></div>
+                <label for="panField">Card Number</label>
+            </div>
+
+            <div class="field-container">
+                <div id="cvvField"></div>
+                <label for="cvvField">CVV</label>
+            </div>
+
+            <div class="field-container">
+                <div id="expirationField"></div>
+                <label for="expirationField">Expiration Date</label>
+            </div>
+
+            <div class="field-container">
+                <input type="text" name="card_holder" id="cardHolder" placeholder="Cardholder Name" required>
+                <label for="cardHolder">Cardholder Name</label>
+
+            </div>
+
+            <button type="submit">Pay</button>
+        </form>
+    </div>
+
+    <script src="https://js-sandbox.dlocal.com"></script>
+    <script>
+
+        function loader(show) {
+            document.getElementById("loader-example-2").style.visibility = show ? "visible" : "hidden";
+        }
+        const dlocalInstance = dlocal('YOUR_API_KEY');
+
+        const fields = dlocalInstance.fields({
+            locale: 'en',
+            country: 'BR'
+        });
+
+        const pan = fields.create('pan', {
+            style: {
+                base: {
+                    fontSize: "16px",
+                    fontFamily: "Quicksand, Open Sans, Segoe UI, sans-serif",
+                    lineHeight: '18px',
+                    color: "#666",
+                    '::placeholder': {
+                        color: "#c1c1c1"
+                    },
+                    iconColor: "#c1c1c1"
+                },
+                autofilled: {
+                    color: "#000000"
+                }
+            },
+            placeholder: "4111 1111 1111 1111"
+        });
+
+        const ccv = fields.create('cvv', {
+            style: {
+                base: {
+                    fontSize: "16px",
+                    fontFamily: "Quicksand, Open Sans, Segoe UI, sans-serif",
+                    lineHeight: '18px',
+                    fontSmoothing: 'antialiased',
+                    color: "#666",
+                    '::placeholder': {
+                        color: "#c1c1c1"
+                    },
+                    iconColor: "#c1c1c1"
+                },
+                focus: {
+                    '::placeholder': {
+                        color: "#adbfd3"
+                    }
+                }
+            },
+            placeholder: "123"
+        });
+
+        const expiration = fields.create('expiration', {
+            style: {
+                base: {
+                    fontSize: "16px",
+                    fontFamily: "Quicksand, Open Sans, Segoe UI, sans-serif",
+                    lineHeight: '18px',
+                    fontSmoothing: 'antialiased',
+                    color: "#666",
+                    '::placeholder': {
+                        color: "#c1c1c1"
+                    },
+                    iconColor: "#c1c1c1"
+                },
+                autofilled: {
+                    color: "#000000"
+                }
+            },
+            placeholder: "MM/YY"
+        });
+
+        const cardHolderInput = document.getElementById('cardHolder');
+
+        pan.mount(document.getElementById('panField'));
+        expiration.mount(document.getElementById('expirationField'));
+        ccv.mount(document.getElementById('cvvField'));
+
+        let isPanReady = false;
+        pan.on('ready', function (event) {
+            isPanReady = true;
+            if (isPanReady && isExpirationReady && isCVVReady) {
+                loader(false);
+            }
+        });
+
+        let isExpirationReady = false;
+        expiration.on('ready', function (event) {
+            isExpirationReady = true;
+            if (isPanReady && isExpirationReady && isCVVReady) {
+                loader(false);
+            }
+        });
+
+        let isCVVReady = false;
+        ccv.on('ready', function (event) {
+            isCVVReady = true;
+            if (isPanReady && isExpirationReady && isCVVReady) {
+                loader(false);
+            }
+        });
+
+
+        document.getElementById('checkoutForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            if (!cardHolderInput.value) {
+                alert('Nome inválido')
+            }
+
+            console.log(cardHolderInput.value);
+            console.log(typeof cardHolderInput.value);
+
+            const result = await dlocalInstance.createToken(pan, expiration, ccv, {
+                name: `${cardHolderInput.value}`
+            })
+
+            console.log(result);
+
+        });
+
+
+
+    </script>
+
+
+</body>
+
+</html>

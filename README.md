@@ -15,7 +15,6 @@ Welcome to the dLocal API Examples repository! Here, you'll find example impleme
     - [Django](#django)
     - [NextJS](#nextjs)
     - [React](#react)
-  - [Contributing](#contributing)
   - [License](#license)
 
 ## Signatures

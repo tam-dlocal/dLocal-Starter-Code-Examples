@@ -34,19 +34,25 @@ Before you begin, ensure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/smartfields-checkout.git
+   git clone https://github.com/tam-dlocal/dLocal-Starter-Code-Examples.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-    cd smartfields-checkout
+    cd "SmartFields Starter Projects/Django"
    ```
 
-3. Install dependencies:
+3. Install Django:
 
    ```bash
-    npm install
+    pip install Django
+   ```
+
+4. Run the Development Server:
+
+   ```bash
+    python manage.py runserver
    ```
 
 ###  Usage
